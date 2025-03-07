@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000'; // ✅ API 서버 주소
+const API_BASE_URL = 'https://nicetofonts.onrender.com'; // ✅ API 서버 주소
 
 /** ✅ 다운로드 횟수 증가 */
 export const fetchDownload = async (fontId) => {

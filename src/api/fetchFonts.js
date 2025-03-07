@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:5000'; // 올바른 API 주소 확인
+const API_BASE_URL = 'https://nicetofonts.onrender.com'; // ✅ API 서버 주소
+
 
 /** ✅ 폰트 데이터를 가져오고 Google Fonts & Custom Fonts 로드 */
 export const fetchFonts = async (limit = 100, offset = 0) => {
