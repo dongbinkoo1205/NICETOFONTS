@@ -1,0 +1,216 @@
+.FontDetail {
+    padding: 0rem 2.5rem 3rem;
+    position: relative;
+    margin-top: var(--homeHeader-height);
+    margin-bottom: var(--footer-height);
+}
+.FontDetail .stickyBtnWrap {
+    display: flex;
+    justify-content: right;
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+}
+
+.FontDetail .stickyBtn {
+    display: inline-block;
+    border-radius: 999rem;
+    transition: all 0.5s;
+    background: linear-gradient(90deg, #6651eb, #f78164);
+    background-size: 200% 100%; /* 배경 크기 조절 */
+    background-position: left center; /* 기본 위치 */
+    animation: shake 3s ease-in-out infinite; /* 4초마다 실행 */
+}
+@keyframes shake {
+    0%,
+    80% {
+        transform: rotate(0);
+    }
+    85% {
+        transform: rotate(-4deg);
+    }
+    90% {
+        transform: rotate(4deg);
+    }
+    95% {
+        transform: rotate(-4deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.FontDetail .stickyBtn:hover {
+    background-position: right center; /* 호버 시 배경 이동 */
+}
+
+.FontDetail .stickyBtn a {
+    color: white;
+    padding: 1.1rem 2rem;
+    display: inline-block;
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
+}
+
+.FontDetail .fontName {
+    font-size: 12rem;
+    text-align: center;
+}
+
+.FontDetail .fontInfo .subInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FontDetail .fontInfo .subInfo > span {
+    display: inline-block;
+    margin-right: 1rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #585858;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+.FontDetail .fontInfo .exFiled {
+    text-align: center;
+    margin: 10rem 0 22rem 0;
+    padding: 0 4rem;
+    font-size: 6rem;
+}
+.FontDetail .fontInfo .exFiled > p .underlineEm {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: 2px;
+}
+.FontDetail .fontInfo .textFiled {
+    margin: 5rem 0 0;
+    padding-top: var(--homeHeader-height);
+}
+.FontDetail .fontInfo .textFiled .textFiledSearch > .textFiledSearchWrap {
+    margin: 4.5rem 0 0rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.FontDetail .fontInfo .textFiled .textFiledSearch > .textFiledSearchWrap > div > p {
+    font-size: 5.5rem;
+}
+.FontDetail .fontInfo .textFiled .textFiledSearch > .textFiledSearchWrap > div > p:last-child {
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+
+.FontDetail .fontInfo .textFiled .textFiledSearch > .textFiledSearchWrap > div > div {
+    font-size: 1.5rem;
+}
+
+.FontDetail .fontInfo .textFiled .textFiledSearch > .textFiledSearchWrap > div {
+    font-size: 3.5rem;
+}
+.FontDetail .fontInfo .textFiled .textFiledRangeWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem 0;
+}
+/* 검색 바 */
+
+.FontDetail .fontInfo .textFiled .textFiledRangeWrap .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    flex: 1;
+    border: 1px solid #585858;
+    padding: 1rem 2rem 1rem 0;
+    border-radius: 9999rem;
+    margin-right: 3rem;
+}
+.FontDetail .fontInfo .textFiled .textFiledRangeWrap .search-bar .input {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 1rem;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #585858;
+}
+.FontDetail .fontInfo .textFiled .textFiledRangeWrap .textRange {
+    position: relative;
+    width: 12%;
+}
+.FontDetail .fontInfo .textFiled .textFiledRangeWrap .textRange input {
+    width: 100%;
+}
+.FontDetail .fontInfo .textFiled .textFiledRangeWrap .textRange span {
+    position: absolute;
+    top: -2.8rem;
+    right: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.FontDetail .fontInfo .textFiled .typing {
+    font-size: 2rem;
+}
+.FontDetail .fontInfo .textFiled .typing > p {
+    padding: 3rem 0;
+    border-top: 1px solid #ccc;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.FontDetail .fontInfo .textFiled .typing:last-child > p {
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.FontDetail .fontInfo .textFiled .typing .variant {
+    display: block;
+    font-size: 1.5rem;
+}
+@media (max-width: 1200px) {
+    .FontDetail {
+        padding: 0rem 1.25rem 0rem;
+    }
+    .FontDetail .stickyBtn a {
+        font-size: 2.5rem;
+    }
+    .FontDetail .fontName {
+        font-size: 10rem;
+        margin: 5rem 0;
+    }
+
+    .FontDetail .fontInfo .subInfo > span {
+        font-size: 1.5rem;
+    }
+    .FontDetail .fontInfo .exFiled {
+        padding: 0 2rem;
+        font-size: 4rem;
+        margin: 10rem 0 15rem 0;
+    }
+    .TemplateWrap {
+        margin: 15rem 0;
+    }
+    .FontDetail .fontInfo .textFiled .textFiledRangeWrap {
+        flex-direction: column-reverse;
+    }
+    .FontDetail .fontInfo .textFiled .textFiledRangeWrap .search-bar {
+        width: 100%;
+        margin: 0;
+    }
+    .FontDetail .fontInfo .textFiled .textFiledRangeWrap .textRange {
+        width: 100%;
+        margin: 5rem 0;
+    }
+    .FontDetail .fontInfo .textFiled .textFiledRangeWrap .textRange span {
+        font-size: 1.8rem;
+        top: -4rem;
+    }
+    .FontDetail .fontInfo .textFiled .textFiledSearch > .textFiledSearchWrap > div > p:first-child {
+        margin-bottom: 1rem;
+    }
+    .TemplateWrapName li:last-child {
+        margin-top: 1rem;
+    }
+    .FontDetail .fontInfo .textFiled .typing .variant {
+        font-size: 2rem;
+    }
+}

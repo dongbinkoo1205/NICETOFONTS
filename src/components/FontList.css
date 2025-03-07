@@ -1,0 +1,275 @@
+/* 전체 컨테이너 스타일 */
+.font-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 74%;
+    position: relative;
+}
+.font-list-container.Blayer {
+    width: 95%;
+}
+.font-list-container.Mob {
+    width: 100%;
+    position: relative;
+}
+.font-list-container.Mob::before {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.21);
+    content: '';
+    z-index: 101;
+}
+.font-list-container.Blayer.Mob::before {
+    display: none;
+}
+.font-list-container.Mob .filter-container {
+    justify-content: flex-end;
+    gap: 2rem;
+}
+.font-list-container.Mob .svg {
+    display: none;
+}
+/* 폰트리스트 스타일 변경 */
+.font-list-container.boxLayer {
+}
+.font-list-container.boxLayer .filterFontList {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.font-list-container.boxLayer .filterFontList > a {
+    width: 48%;
+    display: inline-block;
+}
+.font-list-container.boxLayer .filterFontList > a .typingZone {
+    max-height: none;
+    overflow: visible;
+}
+.font-list-container.boxLayer .filterFontList > a .typingZone div {
+    white-space: initial;
+    text-overflow: initial;
+    overflow: visible;
+}
+/* 검색 필드 및 슬라이더 상위 컨테이너 */
+.filter-container {
+    padding: 0rem 2.5rem 1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: var(--header-height);
+    border-bottom: 1px solid #ddd;
+    z-index: 100;
+}
+.filter-container .filterCont {
+}
+.filter-container .filterCont .svgWrap {
+    cursor: pointer;
+}
+.filter-container .filterCont .svgWrap li {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: space-around;
+}
+.filter-container .filterCont .svgWrap li span {
+    transition: 0.5s;
+    width: 2.7rem !important;
+}
+.filter-container .filterCont .svgWrap li span img {
+    width: 100%;
+    filter: var(--filter-color);
+}
+.rotatePlus {
+    transform: rotate(0deg);
+}
+.rotateMinus {
+    transform: rotate(-315deg);
+}
+
+.filter-container .filterCont .svgWrap li div {
+    font-size: 2rem;
+}
+
+.filterFontList {
+    padding: 2rem;
+    min-height: 80vh;
+}
+/* 검색 필드 스타일 */
+.search-input {
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+
+/* 슬라이더 스타일 */
+.font-size-slider {
+    width: 15rem;
+}
+
+/* 슬라이더 값 텍스트 */
+.font-size-value {
+    margin-left: 1rem;
+}
+
+/* 폰트 미리보기 항목 스타일 */
+.font-item {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    padding: 1.9rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    transition: box-shadow 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 10px;
+}
+.font-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px;
+}
+
+.font-item .fontOption {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.font-item .fontOption > div {
+    font-size: 2.3rem;
+    margin-right: 3rem;
+    position: relative;
+}
+.font-item .fontOption > div::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -1.5rem;
+    transform: translateY(-50%);
+    width: 0.5px;
+    height: 60%;
+    background-color: #444;
+}
+
+.font-item .fontOption ul {
+    display: flex;
+    margin: 0.5rem 0;
+}
+.font-item .fontOption ul li {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    letter-spacing: -0.05rem;
+}
+.font-item .fontOption ul li:last-child {
+    margin-right: 0rem;
+}
+
+/* 폰트 이름 스타일 */
+.font-item h2 {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* 폰트 예시 텍스트 스타일 */
+.font-item p {
+    font-size: 1.6rem;
+}
+
+/* "더 보기" 버튼 스타일 */
+.load-more-button {
+    transition: all 0.5s;
+    padding: 1rem 2rem;
+    background: black;
+    background-size: 200% 100%; /* 배경 크기 조절 */
+    background-position: left center; /* 기본 위치 */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+.range {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.range > span {
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.svg {
+    display: flex;
+    cursor: pointer;
+}
+.svg div {
+    margin-right: 0.5rem;
+    font-size: 1.6rem;
+}
+.svg div:last-child {
+    margin-right: 0;
+}
+.selectSvgCont {
+    display: flex;
+}
+.customSelect {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.6rem;
+    color: currentColor;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.customSelect .selected-text {
+    font-weight: 500;
+    color: currentColor;
+}
+
+.customSelect .dropdown-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: currentColor;
+}
+
+/* 실제 select 숨기기 */
+.customSelect select {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.load-more-button:hover {
+    background: white;
+    color: black;
+    border: 1px solid;
+}
+
+.typingZone {
+    max-height: 10rem;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+.typingZone div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+@media (max-width: 1200px) {
+    .font-item .fontOption {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .font-item .fontOption > div::before {
+        display: none;
+    }
+}

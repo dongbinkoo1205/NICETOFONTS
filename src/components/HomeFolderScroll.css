@@ -1,0 +1,22 @@
+/* 전체 컨테이너 스타일 */
+.folder-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* height: calc(480vh - (var(--homeHeader-height) * 4)); */
+    height: 100%;
+}
+
+/* 개별 섹션 스타일 */
+.folder-section {
+    height: calc(80vh - var(--homeHeader-height));
+    position: sticky;
+    top: 0;
+    transition: 0.3s linear;
+    opacity: 0;
+}
+
+/* 스크롤 위치에 따라 점진적으로 펴지고 다시 접히는 효과 */
+.folder-section.in-view {
+    opacity: 1;
+}

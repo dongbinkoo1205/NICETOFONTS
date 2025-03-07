@@ -1,0 +1,124 @@
+.FixSideContent {
+    width: 5%;
+    height: 100vh;
+    border-right: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.FixSideContent.Mob {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    height: var(--footer-height);
+    width: 100%;
+    z-index: 100;
+    flex-direction: row;
+    border-top: 1px solid;
+    padding: 0;
+}
+.FixSideContent.Mob .iconWrap {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.FixSideContent.Mob .iconWrap > ul {
+    width: 20%;
+    margin-bottom: 0;
+    height: 100%;
+}
+.FixSideContent.Mob ul li {
+    font-size: 3.2rem;
+    height: 100%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FixSideContent ul li img {
+    width: 5rem;
+    object-fit: contain;
+    filter: var(--filter-color);
+}
+
+.FixSideContent.Mob .iconWrap ul li > div {
+    font-size: 1.5rem;
+}
+.FixSideContent.Mob ul li > div {
+    font-size: 1.5rem;
+}
+.FixSideContent.Mob .darkModeWrap {
+    width: 20%;
+    height: 100%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FixSideContent.Mob .iconWrap ul {
+    margin-bottom: 0;
+}
+
+.FixSideContent .iconWrap ul {
+    margin-bottom: 3rem;
+}
+.FixSideContent ul {
+    cursor: pointer;
+}
+
+.FixSideContent ul li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.FixSideContent .iconWrap ul li.on::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: #00000023;
+    border-radius: 99999px;
+}
+
+.FixSideContent ul li > div {
+    font-size: 1.1rem;
+    margin-top: 0.3rem;
+}
+
+.FixSideContent .darkModeWrap {
+}
+.FixSideContent .darkModeWrap > ul {
+    position: relative;
+    height: 8rem;
+}
+.FixSideContent .darkModeWrap > ul > li {
+    width: 100%;
+    height: 100%;
+}
+.FixSideContent a {
+    display: block;
+}
+
+.FixSideContent.Mob a {
+    width: 20%;
+    height: 100%;
+    padding: 2.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FixSideContent a.on {
+    background-color: #93939336;
+}

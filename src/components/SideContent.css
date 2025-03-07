@@ -1,0 +1,212 @@
+.side-content {
+    width: 21%;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: scroll;
+    transition: translateX 0.5s;
+    visibility: visible;
+    overflow-x: hidden;
+}
+.side-content > .cateWrap {
+    padding: 0rem 1.6rem 2rem;
+}
+
+.side-content.Blayer {
+    display: none;
+}
+.side-content.Mob {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    z-index: 102;
+}
+.side-content .closeBtn {
+    position: sticky;
+    font-size: 1.8rem;
+    width: 5rem;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+    top: 0rem;
+    right: 0rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.side-content .closeBtn img {
+    width: 100%;
+    object-fit: cover;
+    filter: var(--filter-color);
+}
+
+.side-content .slideLogo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+.side-content .slideLogo .mainLogo {
+    font-size: 3rem;
+    padding-left: 0;
+}
+.side-content .slideLogo li {
+    font-size: 1.2rem;
+}
+.side-content .slideLogo li img {
+    width: 15rem;
+    object-fit: cover;
+    margin-top: 1rem;
+    filter: var(--filter-color);
+}
+
+.side-content > div > div,
+fieldset {
+    margin-bottom: 4rem;
+}
+.side-content fieldset:last-child {
+    margin-bottom: 0rem;
+}
+.side-content .typingWrap {
+}
+.side-content .typingWrap > div {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.side-content .typingWrap > .typing {
+    width: 100%;
+    height: 15rem;
+    padding: 1.5rem;
+    resize: none;
+    background: rgb(243, 243, 243);
+    border: none;
+    color: rgb(0, 0, 0);
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+}
+textarea.typing::placeholder {
+    color: rgb(0, 0, 0); /* 원하는 색상 */
+    opacity: 1; /* 기본적으로 일부 브라우저는 투명도가 적용됨 → 1로 설정 */
+}
+.side-content .range {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+.side-content .range > div {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+.side-content .range > span {
+    position: absolute;
+    top: 1.4rem;
+    right: 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    font-size: 1.4rem;
+}
+
+.filter-group {
+    display: flex;
+    border: none;
+    padding: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filter-group legend {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+.filter-group label {
+    display: flex;
+    align-items: center;
+    width: calc(50% - 2.5rem);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.lastFilter-group label:last-child {
+    width: 100%;
+}
+
+.filter-group input {
+    margin-right: 0.5rem;
+}
+
+.filter-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.filter-button input {
+    display: none;
+}
+
+.filter-button.active {
+    background-color: #4285f4;
+    color: white;
+    border-color: #4285f4;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0;
+}
+
+@media (max-width: 1200px) {
+    .side-content .slideLogo {
+        margin-bottom: 8rem;
+    }
+    .side-content .slideLogo .mainLogo {
+        font-size: 7rem;
+    }
+    .side-content .slideLogo li {
+        font-size: 2rem;
+    }
+    .side-content .slideLogo li img {
+        width: 20rem;
+    }
+
+    .side-content .range > span {
+        font-size: 1.5rem;
+    }
+    .side-content > div > div,
+    fieldset {
+        margin-bottom: 6rem;
+    }
+    .side-content .range > div {
+        font-size: 2rem;
+    }
+    .side-content .typingWrap > div {
+        font-size: 2rem;
+    }
+    .side-content .typingWrap > .typing {
+        font-size: 2.2rem;
+    }
+    .filter-group legend {
+        font-size: 2rem;
+    }
+    .filter-group label {
+        font-size: 1.9rem;
+        margin-bottom: 1.5rem;
+    }
+}
