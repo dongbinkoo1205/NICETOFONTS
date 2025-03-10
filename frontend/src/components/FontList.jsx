@@ -31,7 +31,7 @@ import './FontList.css'; // CSS 스타일
 const FontList = () => {
     const { isMobile } = useContext(MediaQueryContext); // 반응형 컨텍스트
     const { layerStyle, setlayerStyle } = useLayerContext(); // 다크모드 컨텍스트
-    const { fonts, setFonts, deferredFontSize } = useFontContext(); // 폰트 크기 컨텍스트
+    const { fonts, setFonts, updateFontSize } = useFontContext(); // 폰트 크기 컨텍스트
     const [selectedText, setSelectedText] = useState('최신순');
 
     const [changeLayer, setChangeLayer] = useState(true); // 레이아웃 변경 상태
@@ -233,7 +233,7 @@ const FontList = () => {
                                     <div
                                         className="typingZone "
                                         style={{
-                                            fontSize: `${deferredFontSize}px`,
+                                            fontSize: `${updateFontSize}px`,
                                         }}
                                     >
                                         <div>
