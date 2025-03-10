@@ -17,6 +17,8 @@ export const FontProvider = ({ children }) => {
     // ✅ debounce 최적화
     const updateFontSize = debounce((size) => setFontSize(size), 300);
 
+    console.log(updateFontSize);
+
     // ✅ 서버에서 폰트 데이터 가져오기 (환경 변수 적용)
     useEffect(() => {
         console.log('✅ API_BASE_URL:', API_BASE_URL); // 환경 변수 확인
