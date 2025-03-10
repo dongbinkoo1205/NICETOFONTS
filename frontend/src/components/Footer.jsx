@@ -41,7 +41,16 @@ function Footer() {
                     }}
                     onClick={() => copyToClipboard('hi.furyproject@gmail.com')}
                 >
-                    <Box sx={{ display: 'flex', width: '100%', alignItems: 'flex-start', flexDirection: 'column' }}>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            width: '100%',
+                            alignItems: 'flex-start',
+                            flexDirection: 'column',
+                            padding: '0 2rem',
+                            margin: '0rem',
+                        }}
+                    >
                         {/* 좌측 작은 텍스트 */}
                         <Typography sx={{ fontSize: '1.6rem', color: 'currentcolor', mr: '10rem' }}>
                             무엇을 도와드릴까요?
