@@ -3,18 +3,17 @@ const mysql = require('mysql2');
 
 const db = mysql
     .createPool({
-        host: process.env.DB_HOST || 'localhost',
-        user: process.env.DB_USER || 'root',
-        password: process.env.DB_PASS || 'ckawpwk0165!',
-        database: process.env.DB_NAME || 'my_fonts_db',
-        port: process.env.DB_PORT || 3306,
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT,
         waitForConnections: true,
         connectionLimit: 100,
         queueLimit: 0,
     })
-    .promise(); // ✅ 반드시 promise() 적용!
+    .promise();
 
-// ✅ MySQL 연결 체크 (Ping Test)
 (async () => {
     try {
         await db.query('SELECT 1');
