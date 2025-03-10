@@ -2,6 +2,8 @@ import React, { createContext, useState, useEffect, useContext, useCallback, use
 import { debounce } from 'lodash';
 import axios from 'axios';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://nicetofonts.onrender.com';
+
 // FontContext 생성
 const FontContext = createContext();
 
@@ -18,11 +20,10 @@ export const FontProvider = ({ children }) => {
         []
     );
 
-    // 서버에서 폰트 데이터 가져오기
     useEffect(() => {
         const fetchFonts = async () => {
             try {
-                const response = await axios.get('https://nicetofonts.onrender.com/fonts?limit=10&offset=0');
+                const response = await axios.get(`${API_BASE_URL}/fonts?limit=10&offset=0`);
                 setFonts(response.data);
             } catch (error) {
                 console.error('❌ 폰트 데이터를 불러오는 중 오류 발생:', error);
@@ -33,7 +34,6 @@ export const FontProvider = ({ children }) => {
 
         fetchFonts();
     }, []);
-
     return (
         <FontContext.Provider
             value={{ fonts, loading, fontSize, deferredFontSize, updateFontSize, setFonts, setFontSize }}
