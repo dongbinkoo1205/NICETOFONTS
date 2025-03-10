@@ -1,8 +1,7 @@
 .FontDetail {
-    padding: 0rem 2.5rem 3rem;
+    padding: 0rem 2.5rem;
     position: relative;
     margin-top: var(--homeHeader-height);
-    margin-bottom: var(--footer-height);
 }
 .FontDetail .stickyBtnWrap {
     display: flex;
@@ -57,6 +56,9 @@
     text-align: center;
 }
 
+.FontDetail .fontInfo {
+    margin-bottom: var(--footer-height);
+}
 .FontDetail .fontInfo .subInfo {
     display: flex;
     align-items: center;
