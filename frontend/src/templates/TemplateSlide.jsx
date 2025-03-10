@@ -156,6 +156,7 @@ export default function TemplateSlideComponent() {
                                                 margin: 0,
                                                 textAlign: 'center',
                                                 color: 'var(--text-color)',
+                                                fontSize: '2.2rem',
                                             },
                                         }}
                                         placeholder={`${font.font_name}_${item}입니다.`}

@@ -35,7 +35,7 @@ const CustomImageUpload = ({ index }) => {
                 <Button
                     variant="contained"
                     component="span"
-                    sx={{ backgroundColor: '#222', margin: '1rem 0', fontSize: '1.3rem' }}
+                    sx={{ backgroundColor: '#222', margin: '2rem 0 0 0', fontSize: '1.3rem' }}
                 >
                     이미지 업로드
                 </Button>
