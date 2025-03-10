@@ -1,4 +1,5 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://nicetofonts.onrender.com';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://nicetofonts.onrender.com';
+
 
 if (!API_BASE_URL) {
     console.error('❌ API_BASE_URL이 정의되지 않았습니다!');
