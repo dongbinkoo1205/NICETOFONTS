@@ -43,7 +43,7 @@ const SideContent = () => {
                     <img src={close} alt="" />
                 </span>
             </div>
-            <div className='cateWrap'>
+            <div className="cateWrap">
                 {/* 로고 */}
 
                 <div className="slideLogo">
