@@ -122,11 +122,20 @@ function FontDetail() {
                                 }}
                             >
                                 <div className="subInfo Pretendard-r">
-                                    <span>카테고리 {font.font_style}</span>
-                                    <span>언어 {font.supported_languages}</span>
-                                    <span>굵기 및 스타일 {font.weights.split(', ').length}개</span>
                                     <span>
-                                        다운로드 {typeof font.download_count === 'number' ? font.download_count : 0}회
+                                        카테고리<span>{font.font_style}</span>
+                                    </span>
+                                    <span>
+                                        언어<span>{font.supported_languages}</span>
+                                    </span>
+                                    <span>
+                                        굵기 및 스타일 <span>{font.weights.split(', ').length}개</span>
+                                    </span>
+                                    <span>
+                                        다운로드
+                                        <span>
+                                            {typeof font.download_count === 'number' ? font.download_count : 0}회
+                                        </span>
                                     </span>
                                 </div>
                                 <div className="exFiled">

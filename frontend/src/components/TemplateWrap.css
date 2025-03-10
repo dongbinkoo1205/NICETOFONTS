@@ -1,7 +1,6 @@
 .TemplateWrap {
     width: 100%;
     margin: 14rem 0;
-    padding-top: var(--homeHeader-height);
 }
 .TemplateWrapName {
     width: 100%;

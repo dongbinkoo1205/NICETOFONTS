@@ -70,6 +70,7 @@
     border-radius: 1rem;
     font-size: 1.2rem;
 }
+
 .FontDetail .fontInfo .exFiled {
     text-align: center;
     margin: 10rem 0 22rem 0;
@@ -82,8 +83,6 @@
     text-decoration-thickness: 2px;
 }
 .FontDetail .fontInfo .textFiled {
-    margin: 5rem 0 0;
-    padding-top: var(--homeHeader-height);
 }
 .FontDetail .fontInfo .textFiled .textFiledSearch > .textFiledSearchWrap {
     margin: 4.5rem 0 0rem 0;
@@ -181,6 +180,10 @@
     .FontDetail .fontInfo .subInfo > span {
         font-size: 1.5rem;
     }
+    .FontDetail .fontInfo .subInfo > span {
+        display: block;
+    }
+
     .FontDetail .fontInfo .exFiled {
         padding: 0 2rem;
         font-size: 4rem;
