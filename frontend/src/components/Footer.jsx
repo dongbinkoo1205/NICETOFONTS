@@ -18,6 +18,8 @@ function Footer() {
                 width: '100%',
                 height: 'var(--footer-height)',
                 zIndex: '10',
+                margin: '0',
+                padding: '0',
             }}
         >
             <Box
@@ -25,7 +27,6 @@ function Footer() {
                     display: 'flex',
                     alignItems: 'center',
                     width: '100%',
-                    padding: '2.5rem',
                 }}
             >
                 <Button
