@@ -201,8 +201,8 @@ function FontDetail() {
                     ) : (
                         <p>Loading font details...</p>
                     )}
-                    <Footer />
                 </div>
+                <Footer />
             </div>
         </>
     );
