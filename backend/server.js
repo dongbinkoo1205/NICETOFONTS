@@ -20,7 +20,7 @@ app.get('/fonts', async (req, res) => {
         const offset = parseInt(req.query.offset) || 0;
 
         const sql = `SELECT * FROM fonts LIMIT ? OFFSET ?`;
-        const [results] = await db.query(sql, [limit, offset]);
+        const [results] = await db.execute(sql, [limit, offset]); // ✅ execute 사용
 
         results.forEach((font) => {
             try {
@@ -39,7 +39,7 @@ app.get('/fonts', async (req, res) => {
     }
 });
 
-// ✅ 폰트 검색 (최대 10개 제한) [Promise 방식으로 변경]
+// ✅ 폰트 검색 (최대 10개 제한)
 app.get('/search-fonts', async (req, res) => {
     const { query, limit = 100, offset = 0 } = req.query;
 
@@ -49,7 +49,7 @@ app.get('/search-fonts', async (req, res) => {
 
     try {
         const sql = `SELECT * FROM fonts WHERE font_name LIKE ? LIMIT ? OFFSET ?`;
-        const [results] = await db.query(sql, [`%${query}%`, parseInt(limit), parseInt(offset)]);
+        const [results] = await db.execute(sql, [`%${query}%`, parseInt(limit), parseInt(offset)]); // ✅ execute 사용
         res.json(results);
     } catch (err) {
         console.error('❌ 폰트 검색 오류:', err);
@@ -57,14 +57,14 @@ app.get('/search-fonts', async (req, res) => {
     }
 });
 
-// ✅ 다운로드 횟수 증가 API [정확한 방식]
+// ✅ 다운로드 횟수 증가 API
 app.post('/fonts/download/:id', async (req, res) => {
     const fontId = req.params.id;
 
     try {
-        const [updateResult] = await db.query('UPDATE fonts SET download_count = download_count + 1 WHERE id = ?', [
+        const [updateResult] = await db.execute('UPDATE fonts SET download_count = download_count + 1 WHERE id = ?', [
             fontId,
-        ]);
+        ]); // ✅ execute 사용
 
         if (updateResult.affectedRows === 0) {
             console.warn(`⚠️ 폰트(ID: ${fontId})가 존재하지 않음`);
@@ -72,7 +72,7 @@ app.post('/fonts/download/:id', async (req, res) => {
         }
 
         // ✅ 업데이트 후 변경된 데이터 다시 조회하기
-        const [updatedFont] = await db.query('SELECT * FROM fonts WHERE id = ?', [fontId]);
+        const [updatedFont] = await db.execute('SELECT * FROM fonts WHERE id = ?', [fontId]); // ✅ execute 사용
 
         res.json({ message: '다운로드 횟수 증가 완료', font: updatedFont[0] });
     } catch (error) {
