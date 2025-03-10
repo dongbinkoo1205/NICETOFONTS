@@ -160,7 +160,7 @@
     overflow: hidden;
 }
 .FontDetail .fontInfo .textFiled .typing:last-child > p {
-    /* border-bottom: 1px solid #ccc; */
+    border-bottom: 1px solid #ccc;
 }
 
 .FontDetail .fontInfo .textFiled .typing .variant {
