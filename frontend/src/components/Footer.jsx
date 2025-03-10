@@ -47,14 +47,13 @@ function Footer() {
                         sx={{
                             display: 'flex',
                             width: '100%',
-                            alignItems: 'flex-start',
-                            flexDirection: 'column',
                             padding: '0 2rem',
                             margin: '0rem',
+                            gap: '2rem',
                         }}
                     >
                         {/* 좌측 작은 텍스트 */}
-                        <Typography sx={{ fontSize: '1.6rem', color: 'currentcolor', mr: '10rem' }}>
+                        <Typography sx={{ fontSize: '1.6rem', color: 'currentcolor' }}>
                             무엇을 도와드릴까요?
                             {copied && (
                                 <Typography color="curruntColor" variant="span" ml={'1rem'} fontSize={'1.5rem'}>
@@ -68,17 +67,7 @@ function Footer() {
                             sx={{
                                 fontWeight: 'bold',
                                 position: 'relative',
-                                fontSize: '4rem',
-                                '&::after': {
-                                    content: '""',
-                                    display: 'block',
-                                    width: '100%',
-                                    height: '0.3rem',
-                                    backgroundColor: '#fff462',
-                                    position: 'absolute',
-                                    bottom: '-5px',
-                                    left: 0,
-                                },
+                                fontSize: '3rem',
                             }}
                         >
                             @NTFS.gmail.com
@@ -91,6 +80,7 @@ function Footer() {
                         backgroundColor: '#fff462',
                         width: '5rem',
                         height: '5rem',
+                        padding: '1rem',
                         borderRadius: '50%',
 
                         '&:hover': {

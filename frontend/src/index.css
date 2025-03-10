@@ -273,7 +273,7 @@ body * {
     box-sizing: border-box;
 }
 :root {
-    --footer-height: 15rem;
+    --footer-height: 10rem;
     --header-height: 8rem;
     --homeHeader-height: 5rem;
 }
