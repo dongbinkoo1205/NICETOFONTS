@@ -7,6 +7,7 @@ import { fetchDownload } from '../api/fetchDownFonts';
 
 import FixSideContent from '../components/FixSideContent';
 import HomeHeader from '../components/HomeHeader';
+import Footer from '../components/Footer';
 import './FontDetail.css';
 
 function FontDetail() {
@@ -200,6 +201,7 @@ function FontDetail() {
                     ) : (
                         <p>Loading font details...</p>
                     )}
+                    <Footer />
                 </div>
             </div>
         </>
