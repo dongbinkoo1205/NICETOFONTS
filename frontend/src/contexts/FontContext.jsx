@@ -1,7 +1,8 @@
-import React, { createContext, useState, useEffect, useContext, useCallback, useDeferredValue } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import { debounce } from 'lodash';
 import axios from 'axios';
 
+// ✅ 환경 변수 적용
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://nicetofonts.onrender.com';
 
 // FontContext 생성
@@ -12,15 +13,14 @@ export const FontProvider = ({ children }) => {
     const [fonts, setFonts] = useState([]); // 폰트 데이터 상태 관리
     const [loading, setLoading] = useState(true); // 로딩 상태
     const [fontSize, setFontSize] = useState(30); // 폰트 크기 조절 상태
-    const deferredFontSize = useDeferredValue(fontSize); // 변경된 값을 지연 적용
 
-    // 300ms 동안 입력이 없을 때만 상태 업데이트
-    const updateFontSize = useCallback(
-        debounce((size) => setFontSize(size), 300),
-        []
-    );
+    // ✅ debounce 최적화
+    const updateFontSize = debounce((size) => setFontSize(size), 300);
 
+    // ✅ 서버에서 폰트 데이터 가져오기 (환경 변수 적용)
     useEffect(() => {
+        console.log('✅ API_BASE_URL:', API_BASE_URL); // 환경 변수 확인
+
         const fetchFonts = async () => {
             try {
                 const response = await axios.get(`${API_BASE_URL}/fonts?limit=10&offset=0`);
@@ -34,10 +34,9 @@ export const FontProvider = ({ children }) => {
 
         fetchFonts();
     }, []);
+
     return (
-        <FontContext.Provider
-            value={{ fonts, loading, fontSize, deferredFontSize, updateFontSize, setFonts, setFontSize }}
-        >
+        <FontContext.Provider value={{ fonts, loading, fontSize, updateFontSize, setFonts, setFontSize }}>
             {children}
         </FontContext.Provider>
     );
