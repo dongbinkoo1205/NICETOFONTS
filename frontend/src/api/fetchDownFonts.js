@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 /** ✅ 다운로드 횟수 증가 */
 export const fetchDownload = async (fontId) => {

@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 
 /** ✅ 폰트 데이터를 가져오고 Google Fonts & Custom Fonts 로드 */
