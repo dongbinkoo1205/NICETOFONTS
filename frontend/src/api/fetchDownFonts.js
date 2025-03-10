@@ -1,19 +1,17 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://nicetofonts.onrender.com';
 
-
 if (!API_BASE_URL) {
-    console.error("❌ API_BASE_URL이 정의되지 않았습니다!");
+    console.error('❌ API_BASE_URL이 정의되지 않았습니다!');
 }
 
-console.log("✅ API_BASE_URL:", API_BASE_URL);
-
+console.log('✅ API_BASE_URL:', API_BASE_URL);
 
 /** ✅ 다운로드 횟수 증가 */
 export const fetchDownload = async (fontId) => {
     try {
         console.log(`🚀 다운로드 요청 시작 (ID: ${fontId})`);
 
-        const response = await fetch(`${API_BASE_URL}/fonts/download/${fontId}`, {
+        const response = await fetch(`${API_BASE_URL}/api/fonts/download/${fontId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
