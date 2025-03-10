@@ -16,17 +16,11 @@ app.get('/', (req, res) => {
 // ✅ 폰트 리스트 가져오기 (페이징 적용)
 app.get('/fonts', async (req, res) => {
     try {
-        console.log('📡 API 요청 수신:', req.query);
-
         const limit = parseInt(req.query.limit) || 100;
         const offset = parseInt(req.query.offset) || 0;
 
         const sql = `SELECT * FROM fonts LIMIT ? OFFSET ?`;
-
-        // ✅ Promise 방식으로 변경
         const [results] = await db.query(sql, [limit, offset]);
-
-        console.log('📡 DB 응답 전체:', results);
 
         results.forEach((font) => {
             try {
@@ -45,35 +39,45 @@ app.get('/fonts', async (req, res) => {
     }
 });
 
-// ✅ 폰트 검색 (최대 10개 제한)
-app.get('/search-fonts', (req, res) => {
+// ✅ 폰트 검색 (최대 10개 제한) [Promise 방식으로 변경]
+app.get('/search-fonts', async (req, res) => {
     const { query, limit = 100, offset = 0 } = req.query;
 
     if (!query) {
-        return res.json([]); // 검색어가 없으면 빈 배열 반환
+        return res.json([]);
     }
 
-    const sql = `SELECT * FROM fonts WHERE font_name LIKE ? LIMIT ? OFFSET ?`;
-    db.query(sql, [`%${query}%`, parseInt(limit), parseInt(offset)], (err, results) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
+    try {
+        const sql = `SELECT * FROM fonts WHERE font_name LIKE ? LIMIT ? OFFSET ?`;
+        const [results] = await db.query(sql, [`%${query}%`, parseInt(limit), parseInt(offset)]);
         res.json(results);
-    });
+    } catch (err) {
+        console.error('❌ 폰트 검색 오류:', err);
+        res.status(500).json({ error: err.message });
+    }
 });
 
-// ✅ 다운로드 횟수 증가 API
+// ✅ 다운로드 횟수 증가 API [정확한 방식]
 app.post('/fonts/download/:id', async (req, res) => {
     const fontId = req.params.id;
+
     try {
-        const [result] = await db.query('UPDATE fonts SET download_count = download_count + 1 WHERE id = ?', [fontId]);
-        if (result.affectedRows === 0) {
-            console.warn(`⚠️ 해당 폰트(ID: ${fontId})가 존재하지 않음`);
+        const [updateResult] = await db.query('UPDATE fonts SET download_count = download_count + 1 WHERE id = ?', [
+            fontId,
+        ]);
+
+        if (updateResult.affectedRows === 0) {
+            console.warn(`⚠️ 폰트(ID: ${fontId})가 존재하지 않음`);
             return res.status(404).json({ message: '해당 폰트가 존재하지 않습니다.' });
         }
+
+        // ✅ 업데이트 후 변경된 데이터 다시 조회하기
+        const [updatedFont] = await db.query('SELECT * FROM fonts WHERE id = ?', [fontId]);
+
         res.json({ message: '다운로드 횟수 증가 완료', font: updatedFont[0] });
     } catch (error) {
-        res.status(500).json({ error: '서버 오류' });
+        console.error('❌ 다운로드 API 에러:', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
