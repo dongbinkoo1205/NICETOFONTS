@@ -113,7 +113,7 @@
     text-align: center;
 }
 
-.gradient_Bg {
+/* .gradient_Bg {
     background-image: url('/public/bg2.png');
     background-size: cover;
     background-position: center;
@@ -129,7 +129,7 @@
     height: 100%;
     filter: blur(1.5rem);
     opacity: 0.24;
-}
+} */
 
 /* 기본 라이트 모드 */
 :root {

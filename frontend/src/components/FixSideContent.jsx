@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom'; // 자동으로 현재 페이지 감지
 import { useLayerContext } from '../contexts/LayerContext';
 
-import HomeIcon from '../assets/HomeIcon.png';
+import HomeIcon from '../assets/homeIcon.png';
 import stylusNote from '../assets/stylusNote.png';
 import palette from '../assets/palette.png';
 import help from '../assets/help.png';
