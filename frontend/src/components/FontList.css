@@ -38,8 +38,9 @@
 .font-list-container.boxLayer .filterFontList {
     padding: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 .font-list-container.boxLayer .filterFontList > a {
     width: 48%;
