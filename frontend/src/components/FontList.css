@@ -228,7 +228,7 @@
 }
 
 .customSelect .selected-text {
-    font-weight: 500;
+    font-size: 1.8rem;
     color: currentColor;
 }
 

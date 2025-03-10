@@ -20,7 +20,7 @@ const CustomImageUpload = ({ index }) => {
                     <img
                         src={imagePreview}
                         alt="미리보기"
-                        style={{ width: '100%', height: '110px', borderRadius: '0.5rem' }}
+                        style={{ width: '100%', height: '110px', borderRadius: '0.5rem', objectFit: 'cover' }}
                     />
                 </Box>
             )}

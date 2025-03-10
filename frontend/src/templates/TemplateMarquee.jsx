@@ -75,7 +75,6 @@ const TemplateMarquee = () => {
                                             backgroundColor: 'transparent',
                                             border: 'none',
                                             outline: 'none',
-                                            width: `${index.length * 2}rem`,
                                             lineHeight: '0',
                                             height: 'auto',
                                             '& .rfm-child': {

@@ -20,7 +20,7 @@
     align-self: center;
 }
 .logo img {
-    width: 15rem;
+    width: 18rem;
     object-fit: cover;
     filter: var(--filter-color);
 }
