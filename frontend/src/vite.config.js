@@ -5,9 +5,5 @@ export default defineConfig({
     plugins: [react()],
     server: {
         proxy: {},
-        historyApiFallback: true,
-    },
-    build: {
-        outDir: 'dist',
     },
 });
