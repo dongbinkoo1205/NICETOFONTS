@@ -34,6 +34,8 @@ function Footer() {
                         width: '100%',
                         backgroundColor: 'transparent',
                         color: 'currentColor',
+                        margin: '0',
+                        padding: '0',
                         '&:hover': {
                             color: 'currentColor',
                             backgroundColor: 'transparent',
