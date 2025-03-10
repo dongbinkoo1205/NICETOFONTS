@@ -19,7 +19,7 @@ function Footer() {
                 height: 'var(--footer-height)',
                 zIndex: '10',
                 margin: '0',
-                padding: '0',
+                padding: '0 2rem',
             }}
         >
             <Box
@@ -27,6 +27,7 @@ function Footer() {
                     display: 'flex',
                     alignItems: 'center',
                     width: '100%',
+                    height: '100%',
                 }}
             >
                 <Button
@@ -36,6 +37,7 @@ function Footer() {
                         color: 'currentColor',
                         margin: '0',
                         padding: '0',
+                        height: '100%',
                         '&:hover': {
                             color: 'currentColor',
                             backgroundColor: 'transparent',
@@ -47,9 +49,9 @@ function Footer() {
                         sx={{
                             display: 'flex',
                             width: '100%',
-                            padding: '0 2rem',
+                            height: '100%',
                             margin: '0rem',
-                            gap: '2rem',
+                            gap: '3rem',
                         }}
                     >
                         {/* 좌측 작은 텍스트 */}
