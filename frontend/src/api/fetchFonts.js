@@ -1,5 +1,10 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://nicetofonts.onrender.com';
 
+if (!API_BASE_URL) {
+    console.error('❌ API_BASE_URL이 정의되지 않았습니다!');
+}
+
+console.log('✅ API_BASE_URL:', API_BASE_URL);
 
 /** ✅ 폰트 데이터를 가져오고 Google Fonts & Custom Fonts 로드 */
 export const fetchFonts = async (limit = 100, offset = 0) => {

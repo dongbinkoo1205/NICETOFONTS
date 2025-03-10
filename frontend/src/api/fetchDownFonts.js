@@ -1,4 +1,11 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://nicetofonts.onrender.com';
+
+if (!API_BASE_URL) {
+    console.error("❌ API_BASE_URL이 정의되지 않았습니다!");
+}
+
+console.log("✅ API_BASE_URL:", API_BASE_URL);
+
 
 /** ✅ 다운로드 횟수 증가 */
 export const fetchDownload = async (fontId) => {
