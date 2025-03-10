@@ -170,6 +170,7 @@
 @media (max-width: 1200px) {
     .FontDetail {
         padding: 0rem 1.25rem 0rem;
+        margin-bottom: var(--footer-height);
     }
     .FontDetail .stickyBtn a {
         font-size: 2.5rem;
@@ -182,7 +183,7 @@
     .FontDetail .fontInfo .subInfo > span {
         font-size: 1.5rem;
     }
-    .FontDetail .fontInfo .subInfo > span {
+    .FontDetail .fontInfo .subInfo > span > span {
         display: block;
     }
 
