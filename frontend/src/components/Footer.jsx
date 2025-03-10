@@ -52,7 +52,7 @@ function Footer() {
                             width: '100%',
                             height: '100%',
                             margin: '0rem',
-                            gap: '3rem',
+                            gap: '2rem',
                         }}
                     >
                         {/* 좌측 작은 텍스트 */}
