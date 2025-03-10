@@ -273,7 +273,7 @@ body * {
     box-sizing: border-box;
 }
 :root {
-    --footer-height: 9rem; /* 푸터 높이를 CSS 변수로 설정 */
+    --footer-height: 15rem; /* 푸터 높이를 CSS 변수로 설정 */
     --header-height: 8rem; /* 푸터 높이를 CSS 변수로 설정 */
     --homeHeader-height: 5rem;
 }
