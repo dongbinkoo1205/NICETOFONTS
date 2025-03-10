@@ -185,6 +185,7 @@
     }
     .FontDetail .fontInfo .subInfo > span > span {
         display: block;
+        text-align: center;
     }
 
     .FontDetail .fontInfo .exFiled {

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './HomeHeader.css';
 import nLogo2 from '../assets/nLogo2.png';
 
@@ -14,7 +16,9 @@ function HomeHeader({ menu, setMenu, handleScroll, headerItems }) {
         <div className="HomeHeader">
             <ul className="HomeHeaderWrap">
                 <div className="Nlogo">
-                    <img src={nLogo2} alt="" />
+                    <NavLink to="/">
+                        <img src={nLogo2} alt="" />
+                    </NavLink>
                 </div>
                 <div className="menu">
                     {headerItems.map((item) => (
