@@ -1,0 +1,112 @@
+/* 헤더 스타일 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    padding: 1rem 2.5rem;
+    z-index: 100;
+    top: 0;
+    height: var(--header-height);
+}
+
+/* Google Fonts 로고 스타일 */
+.logo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 5rem;
+    margin-right: 3rem;
+    line-height: 1.2;
+    align-self: center;
+}
+.logo img {
+    width: 15rem;
+    object-fit: cover;
+    filter: var(--filter-color);
+}
+
+.smslogun {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 검색 바 */
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* background-color: #f3f3f3; */
+    border-radius: 1rem;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 1rem;
+    width: 100%;
+    color: currentColor;
+    font-size: 2rem;
+}
+
+/* 검색 아이콘 */
+.search-icon {
+    /* color: gray; */
+}
+
+/* 정렬 드롭다운 */
+.sort-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sort-dropdown select {
+    border: none;
+    background: transparent;
+    font-size: 1.4rem;
+    /* color: #444; */
+    cursor: pointer;
+}
+
+/* 장바구니 아이콘 */
+.cart-icon {
+    position: relative;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: blue;
+    /* color: white; */
+    font-size: 1rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.4rem;
+}
+/* "더 보기" 버튼 스타일 */
+.load-more-button {
+    transition: all 0.5s;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #6651eb, #f78164);
+    background-size: 200% 100%; /* 배경 크기 조절 */
+    background-position: left center; /* 기본 위치 */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}
+@media (max-width: 1200px) {
+    .header {
+    }
+    .load-more-button {
+        display: none;
+    }
+}

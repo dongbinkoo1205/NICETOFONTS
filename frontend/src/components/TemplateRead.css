@@ -1,0 +1,24 @@
+.templateRead {
+    width: 100%;
+    height: 100vh;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+.templateRead ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 3rem;
+}
+.templateRead ul li:first-child {
+    font-size: 10rem;
+}
+
+.templateRead ul li:last-child {
+    font-size: 1.8rem;
+    text-align: justify;
+    line-height: 1.8;
+}

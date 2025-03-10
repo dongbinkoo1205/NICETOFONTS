@@ -1,0 +1,50 @@
+.HomeTemplateWrap {
+    height: 100%;
+    background-color: var(--background-color);
+}
+
+.HomeTemplateHead {
+    padding: 1rem;
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    margin-top: -1px;
+}
+.HomeTemplateHead li:first-child {
+    font-size: 1.5rem;
+}
+.HomeTemplateHead li:last-child {
+    font-size: 1.2rem;
+}
+
+.HomeTemplateContent {
+    height: calc(100% - var(--homeHeader-height));
+    margin-bottom: -1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 1100px) {
+    .HomeTemplateHead > div {
+        font-size: 1.8rem;
+    }
+    .HomeTemplateContent {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 5rem;
+    }
+    .HomeTemplateContent > div {
+        border-right: 0;
+        width: 100%;
+        height: auto;
+    }
+    .HomeTemplateContent > div:last-child {
+        margin-top: 5rem;
+    }
+    .HomeTemplateContent .HomeTemplateDesc p:nth-of-type(2) {
+        font-size: 2rem;
+    }
+}
