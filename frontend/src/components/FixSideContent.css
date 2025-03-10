@@ -55,7 +55,7 @@
 }
 .FixSideContent.Mob .darkModeWrap {
     width: 20%;
-    height: 100%;
+    height: inherit;
     margin-bottom: 0;
     display: flex;
     align-items: center;
@@ -114,7 +114,7 @@
 .FixSideContent.Mob a {
     width: 20%;
     height: 100%;
-    padding: 2.5rem 0;
+    padding: 1.2rem 0;
     display: flex;
     align-items: center;
     justify-content: center;

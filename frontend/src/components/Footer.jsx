@@ -56,7 +56,7 @@ function Footer() {
                             sx={{
                                 fontWeight: 'bold',
                                 position: 'relative',
-                                fontSize: '4.5rem',
+                                fontSize: '4rem',
                                 '&::after': {
                                     content: '""',
                                     display: 'block',
