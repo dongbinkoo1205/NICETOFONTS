@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://nicetofonts.onrender.com'; // ✅ API 서버 주소
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
 export const fetchSearchFonts = async (query, limit = 100, offset = 0) => {
     if (!query) return [];
