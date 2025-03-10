@@ -5,7 +5,6 @@ import { useFontContext } from '../contexts/FontContext'; // 폰트 컨텍스트
 import { useLayerContext } from '../contexts/LayerContext'; // 다크모드 컨텍스트
 import { MediaQueryContext } from '../contexts/MediaQueryContext'; // 반응형 컨텍스트
 
-import { debounce } from 'lodash';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import NotFound from './NotFound';
@@ -31,8 +30,7 @@ import './FontList.css'; // CSS 스타일
 const FontList = () => {
     const { isMobile } = useContext(MediaQueryContext); // 반응형 컨텍스트
     const { layerStyle, setlayerStyle } = useLayerContext(); // 다크모드 컨텍스트
-    const { fonts, setFonts, updateFontSize } = useFontContext(); // 폰트 크기 컨텍스트
-    console.log(updateFontSize);
+    const { fonts, setFonts, updateFontSize, fontSize } = useFontContext(); // 폰트 크기 컨텍스트
     const [selectedText, setSelectedText] = useState('최신순');
 
     const [changeLayer, setChangeLayer] = useState(true); // 레이아웃 변경 상태
@@ -234,7 +232,7 @@ const FontList = () => {
                                     <div
                                         className="typingZone "
                                         style={{
-                                            fontSize: `${updateFontSize}px`,
+                                            fontSize: `${fontSize}px`,
                                         }}
                                     >
                                         <div>
