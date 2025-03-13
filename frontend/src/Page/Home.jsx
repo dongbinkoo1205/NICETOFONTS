@@ -17,7 +17,7 @@ import Footer from '../components/Footer';
 const menuItems = [
     { text: '폰트보기', link: '/Page/MainPage' },
     { text: '문의하기', link: '/Page/FaqPage' },
-    { text: 'Created by', link: 'https://profile-theta-lovat.vercel.app/' },
+    { text: 'Created by', link: 'https://newprofile-jade.vercel.app/' },
 ];
 
 const headerItems = [{ value: 'Home' }, { value: 'About' }, { value: 'Template' }];
